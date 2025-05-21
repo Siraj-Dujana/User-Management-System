@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View All Users</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>User Management System</h1>
+    <a href="/admin/login">Admin Panel</a>
+    
+    <form action="/search">
+        <input type="email" placeholder="Search By E-mail" name="filter">   
+        <button type="submit">Search</button>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <td>id</td>
+                <td>name</td>
+                <td>email</td>
+            </tr>
+        </thead>
+        <% for (user of data) { %>
+            <tbody>
+                <tr>
+                    <td><%= user.id %></td>
+                    <td><%= user.username %></td>
+                    <td><%= user.email %></td>
+                </td>
+                </tr>
+            </tbody>
+            <% } %>
+            <footer>
+                <tr>
+                    <td>Total no of users: <%= count %></td>
+                </tr>
+            </footer>
+        </table>
+        <h1><a href="/user/new">CREATE NEW USER</a></h1>
+</body>
+</html>

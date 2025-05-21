@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete User</title>
+    <link rel="stylesheet" href="/style.css">
+
+</head>
+<body>
+    <form  method="post" action="/user/<%=id%>?_method=DELETE">
+        <h1>DELETE USER</h1>
+        <p>ID: <%= id %></p>
+        <input type="text" name="email" id="" placeholder="email" required value="<%= email %>">
+        <input type="text" name="password" id="" placeholder="password" required>
+        <button type="submit">delete</button>
+        <a href="/user">Back</a>
+    </form>
+
+    <div class="box">
+        <h1><%= title %></h1>
+        <a href="<%= Link %>">OK</a>
+    </div>
+
+
+      <script>
+        let div=document.querySelector('.box');
+
+        if(<%= display %>){
+          div.style.display="flex";
+        }
+        else{
+            div.style.display="none";
+        }
+    </script>
+</body>
+</html>

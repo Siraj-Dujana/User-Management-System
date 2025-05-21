@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin-Panel</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h1>User Management System</h1>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="/user">User Panel</a>
+    <% if (isAdmin) { %>
+      <a href="/admin/logout">Logout</a>
+    <% } else { %>
+      <a href="/admin/login">Admin Login</a>
+      <a href="/admin/register">Register Admin</a>
+    <% } %>
+  </nav>
+
+  <!-- Search form -->
+  <form action="/search">
+    <input type="email" placeholder="Search By E-mail" name="filter">   
+    <button type="submit">Search</button>
+  </form>
+
+  <!-- User table -->
+  <table>
+    <thead>
+      <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Email</td>
+        <td>Password</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (user of data) { %>
+        <tr>
+          <td><%= user.id %></td>
+          <td><%= user.username %></td>
+          <td><%= user.email %></td>
+          <td><%= user.password %></td>
+          <td><a href="/user/<%= user.id %>/edit">Edit</a></td>
+          <td><a href="/user/<%= user.id %>">Delete</a></td>
+        </tr>
+      <% } %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="6">Total no of users: <%= count %></td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <h1><a href="/user/new">CREATE NEW USER</a></h1>
+</body>
+</html>

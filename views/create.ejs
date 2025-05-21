@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New User</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <form action="/user/new" method="post">
+        <h1>CREATE NEW USER</h1>
+        <input type="text" name="username" id="" placeholder="name" required>
+        <input type="email" name="email" id="" placeholder="email" required>
+        <input type="password" name="password" id="" placeholder="password" required>
+        <button type="submit">SUBMIT</button>
+        <a href="/user">Back</a>
+    </form>
+    <div class="box">
+        <h1><%= title %></h1>
+        <a href="/user/new">OK</a>
+    </div>
+    <script>
+        let div=document.querySelector('.box');
+
+        if(<%= display %>){
+          div.style.display="flex";
+        }
+        else{
+            div.style.display="none";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Panel</title>
+    <link rel="stylesheet" href="/style.css">
+
+</head>
+<body>
+    <form  method="post" action="/admin/login">
+        <h1>Admin Login</h1>
+        <input type="email" name="email" id="" placeholder="email" required>
+        <input type="password" name="password" id="" placeholder="password" required>
+         <a href="/admin/register">Register if you have not logged in</a>
+         <br>
+        <button type="submit">Login</button>
+        <a href="/user">Back</a>
+    </form>
+
+    <div class="box">
+        <h1><%= title %></h1>
+        <a href="/admin/login">OK</a>
+    </div>
+
+    
+      <script>
+        let div=document.querySelector('.box');
+
+        if(<%= display %>){
+          div.style.display="flex";
+        }
+        else{
+            div.style.display="none";
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "@faker-js/faker": "^9.8.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-session": "^1.18.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^8.15.0",
+    "path": "^0.12.7",
+    "uuid": "^11.1.0"
+  }
+}
